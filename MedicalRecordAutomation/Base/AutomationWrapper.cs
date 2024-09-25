@@ -20,7 +20,7 @@ namespace ThomsonReuters.MedicalRecordAutomation.Base
             driver.Manage().Window.Maximize();
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
 
-            driver.Navigate().GoToUrl("https://demo.openemr.io/b/openemr");
+            driver.Navigate().GoToUrl("https://demo.openemr.io/b/openemr/");
         }
 
         [TearDown]
