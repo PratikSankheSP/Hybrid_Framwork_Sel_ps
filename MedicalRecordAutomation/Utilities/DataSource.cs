@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -33,5 +34,22 @@ namespace ThomsonReuters.MedicalRecordAutomation.Utilities
             return finalData;
 
         }
+
+        public static object[] ValidLoginDataExcel()
+        {
+            object[] finalData = ExcelSource.GetSheetIntoObjectArray
+            (@"C:\Users\6124596\OneDrive - Thomson Reuters Incorporated\iSquad\Selenium Training\Day1_SourceCodes\AutomationFrameworkSolution\MedicalRecordAutomation\TestData\OpenEmr_DataSet.xlsx", "ValidLoginTest");
+             
+            return finalData;
+        }
+
+        public static object[] InvalidLoginDataExcel()
+        {
+            object[] finalData = ExcelSource.GetSheetIntoObjectArray
+            (@"C:\Users\6124596\OneDrive - Thomson Reuters Incorporated\iSquad\Selenium Training\Day1_SourceCodes\AutomationFrameworkSolution\MedicalRecordAutomation\TestData\OpenEmr_DataSet.xlsx", "InvalidLoginTest");
+
+            return finalData;
+        }
+
     }
 }

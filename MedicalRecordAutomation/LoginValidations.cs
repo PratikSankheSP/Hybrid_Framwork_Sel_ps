@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using ThomsonReuters.MedicalRecordAutomation.Base;
 using ThomsonReuters.MedicalRecordAutomation.Utilities;
 
-namespace MedicalRecordAutomation
+namespace ThomsonReuters.MedicalRecordAutomation
 {
     public class LoginValidations:AutomationWrapper
     {
         
         
         [Test]
-        [TestCaseSource(typeof(DataSource),nameof(DataSource.ValLoginData))]
+        [TestCaseSource(typeof(DataSource),nameof(DataSource.ValidLoginDataExcel))]
 
         //[TestCase ("admin","pass","OpenEmr")]
 
@@ -36,7 +36,7 @@ namespace MedicalRecordAutomation
         }
 
         [Test]
-        [TestCase ("adm","pas","Invalid username or password")]
+        [TestCaseSource (typeof(DataSource),nameof(DataSource.InvalidLoginDataExcel))]
         public void InValLogin(string un, string pass, string expectedValue)
         {
             driver.FindElement(By.Id("authUser")).SendKeys(un);
